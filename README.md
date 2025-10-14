@@ -56,6 +56,13 @@ Para la realización del sitio web se utilizaron diferentes técnologias moderna
 + JavaScript
 
 + React
+  
+## *Versión actualizada en React*
+
+Se realizó una nueva versión de la tienda Yusmeing realizado en un nuevo y moderno framework llamado React, el cual aumenta la rápidez de la página web y facilitando funcionalidades dentro de la misma utilizando componentes reutilizables que optimizan el programa.
+
+Esta nueva versión en React mantiene la característica interfaz de Yusmeing con el toque dorado que le da personalidad pero de una diferente manera, Se cambió el Home para que al agregar productos no haya necesidad de entrar en una página web propia del ítem, simplemente ahora agregando el botón se agrega al carrito haciendo que la compra sea más rápida y simple para todos los usuarios.
+
 
 # Capturas del sitio web
 
