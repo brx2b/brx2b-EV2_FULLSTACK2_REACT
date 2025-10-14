@@ -4,6 +4,8 @@
 |---
 Brian Aravena Quezada
 
+https://brx2b-ev-2-fullstack-2-react.vercel.app/
+
 ---
 
 ## Yusmeing
