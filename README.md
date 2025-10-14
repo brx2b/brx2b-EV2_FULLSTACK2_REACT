@@ -1,4 +1,4 @@
-# Repositorio exclusivo para la evaluación 1 de FullStack 2 
+# Repositorio exclusivo para la evaluación 2 de FullStack 2 
 
 | Desarollo completo |
 |---
