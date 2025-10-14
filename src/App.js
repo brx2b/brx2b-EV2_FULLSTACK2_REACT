@@ -214,7 +214,6 @@ function App() {
           </div>
         </div>
 
-        // Rutas de la pag
         <Routes>
           <Route path="/" element={<Inicio productos={productos} agregarAlcarrito={agregarAlcarrito} />} />
           <Route path="/Contacto" element={<Contacto />} />
