@@ -55,6 +55,8 @@ Para la realización del sitio web se utilizaron diferentes técnologias moderna
 
 + JavaScript
 
++ React
+
 # Capturas del sitio web
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b57687db-cca8-459c-9101-44286a9d493a" />
