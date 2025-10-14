@@ -1,38 +1,323 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+body{
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/948/883/766/fall-landscape-sun-sky-wallpaper-b8465d1850004ca8004c717e78c274ba.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+body::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: gold;
+}
+.dec-text{
+    text-decoration: underline;
+}
+#barra-sup{
+    align-items: center;
+    border-bottom: solid 3px white;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+}
+#blok{
+    color: rgb(235, 171, 98);
+    background-color: black;
+    padding: 30px;
+    z-index: 100;
+    font-size: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+    
+    color: white;
+   text-decoration: none; 
+   transition: 320ms;
+}
+a:hover{
+    color: rgb(255, 228, 72);
+}
+#header{
+    text-decoration: underline rgb(241, 225, 134);
+    
+}
+span{
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    font-size: 23px;
+    margin: 20px;
+    padding: 20px;
+    align-self: center;
+}
+#btn-cerrar{
+  font-family: "DM Serif Text", serif;
+    font-style: normal;
+    font-size: 13px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#eslogan{
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    margin-left: 30px;
+    font-size: 90px;
+    color: rgb(241, 225, 134);
+}
+#eslogan:hover{
+    color: rgb(247, 235, 172);
+    cursor: default;
+}
+footer{
+    margin-top: 0px;
+    padding: 20px;
+    border-top: 2px solid white;
+    color: white;
+    background-color: black;
+}
+#media-pag {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid black;
+    color: azure;
+    font-size: 24px;
+    font-style: normal;
+    font-family: "DM Serif Text", serif;
+    margin: 5px;
+    padding: 20px;
+    row-gap: 20px;
+    border-top: solid 2px white;
+    padding-top: 50px;
+}
+@media (max-width: 1440px) {
+  #media-pag {
+    grid-template-columns: repeat(2,1fr);
+    font-size: 20px;
+    padding: 15px;
+    row-gap: 15px;
+  }
+
+  #eslogan {
+    font-size: 70px; 
+    margin-left: 20px;
+  }
+
+  .descripcion {
+    font-size: 16px;
+  }
+
+  input {
+    width: 220px;
+    font-size: 16px;
+  }
+
+  .cuenta {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    column-gap: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (max-width: 1024px) {
+  body {
+    font-size: 90%;
+    padding: 0 10px;
+  }
+
+  #eslogan {
+    font-size: 60px;
+    margin-left: 15px;
+  }
+
+
+  .descripcion {
+    font-size: 16px;
+  }
+
+
+  input {
+    width: 200px;
+  }
+
+  .cuenta {
+    grid-template-columns: 1fr; 
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 80%;
+    padding: 0 5px;
+  }
+
+  #eslogan {
+    font-size: 40px;
+    margin-left: 10px;
+  }
+
+
+  #media-pag {
+    grid-template-columns: 1fr; 
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+  }
+
+  .texto-cuenta {
+    font-size: 16px;
+  }
+
+  input {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.tarjetas {
+    width: 400px;
+    border: solid 2px white;
+    text-align: center;
+    background-color: black;
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.descripcion {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.orden-medio{
+    display: block;
+}
+#logo{ 
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    color: goldenrod;
+}
+.cuenta{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    color: gold;
+    font-size: 15px;
+    box-shadow: 0px 50px 30px black;
+    column-gap: 20px;
+    margin-top: -50px ;
+}
+#bienvenida{
+    color: white;
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 0px;
+    background-color: black;
+    padding: 20px;
+    box-shadow: 0px 10px 20px black;
+    
+}
+input{
+    align-items: center;
+    margin-left: -5px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px;
+    border-color: white;
+    width: 240px;
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+}
+.texto-cuenta{
+    font-size: 20px;
+    margin-bottom: -2px;
+    color: wheat;
+}
+.tex-detalle{
+    border-bottom: solid 2px white;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: black;
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    color: white;
+    transition: 320ms;
+}
+#media-pag-carr{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid black;
+    color: azure;
+    font-size: 24px;
+    font-style: normal;
+    font-family: "DM Serif Text", serif;
+    margin: 5px;
+    padding: 20px;
+    row-gap: 20px;
+    border-top: solid 2px white;
+    padding-top: 50px;
+}
+#lista-carrito{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border: solid 2px white;
+    border-radius: 10px;
+    min-height: 400px;
+}
+#titulo-carrito{
+    color: gold;
+    text-decoration: underline 3px white;
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    font-size: 40px;
+    margin-top: 0px;
+    background-color: black;
+    padding: 20px;
+    box-shadow: 0px 10px 20px black;
+}
+#btn-eliminarCarrito{
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: solid 2px white;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 320ms;
+    margin: 20px;
 }
