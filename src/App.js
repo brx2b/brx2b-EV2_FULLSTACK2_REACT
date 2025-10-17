@@ -2,21 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-
+import './coloresCustom.css';
 // Pags
 import Contacto from './pages/Contacto';
 import Nosotros from './pages/Nosotros';
 import Blog from './pages/Blog';
 import Carrito from './pages/Carrito';
-
-
+import Login from './pages/Login';
 
 function Inicio({ productos, agregarAlcarrito }) {
   return (
     <div id='media-pag' className='tarjeta'>
       {productos.map(producto => (
         <div className='tarjetas' key={producto.id}>
-          <img src={producto.imagen} alt={producto.nombre} style={{ width: '100%' }} />
+          <img src={producto.imagen} alt={producto.nombre} style={{ width: '40vh' }} />
           <h3>{producto.nombre}</h3>
           <p>${producto.precio}</p>
           <p>{producto.desc}</p>
@@ -40,8 +39,8 @@ function Inicio({ productos, agregarAlcarrito }) {
 }
 
 function App() {
-  const usuarios = [{ nickname: 'admin', email: '', password: 'admin' }];
-
+  
+  
   const productos = [
     { id: 1, nombre: 'Collar con jade', precio: 199000, imagen: 'imgs/12f6e627-4fcb-47cd-a9f2-be5cf3011344.jpeg', desc: 'Collar de oro 18k', cantidad: 0 },
     { id: 2, nombre: 'Miel de dorado', precio: 690990, imagen: 'imgs/botella_miel_de_oro.jpg', desc: 'Botella de miel de oro 24k', cantidad: 0 },
@@ -56,30 +55,7 @@ function App() {
 
   const [carrito, setCarrito] = useState([]);
 
-  function verificarUsuario() {
-    const nickname = document.getElementById('nick-iniciar').value;
-    const password = document.getElementById('contrase-iniciar').value;
-
-    if (nickname === '' || password === '') {
-      alert('Por favor, complete todos los campos');
-      document.getElementById('nick-iniciar').setAttribute('style', 'border: solid 2px red');
-      document.getElementById('contrase-iniciar').setAttribute('style', 'border: solid 2px red');
-      return;
-    }
-    const usuarioActivo = usuarios.find(u => u.nickname === nickname && u.password === password);
-
-    if (usuarioActivo) {
-      localStorage.setItem('usuarioActivo', JSON.stringify(usuarioActivo));
-      document.getElementById('carritoBTN').removeAttribute('hidden');
-      document.getElementById('btn-cerrar').removeAttribute('hidden');
-      document.getElementById('bienvenida').innerText = `Bienvenido, ${usuarioActivo.nickname}`;
-      alert(`Bienvenido, ${usuarioActivo.nickname}`);
-      window.location.reload();
-    } else {
-      alert('Usuario o contraseña incorrectos');
-      
-    }
-  }
+  
 
   const agregarAlcarrito = (producto) => {
     if (localStorage.getItem('usuarioActivo') === null) {
@@ -99,43 +75,7 @@ function App() {
     alert(`Se ha agregado ${producto.nombre} al carrito`);
   };
 
-  function registrarUsuario() {
-    const nickname = document.getElementById('nick-registrar').value;
-    const email = document.getElementById('email-registrar').value;
-    const password = document.getElementById('contrase-registrar').value;
-    const passwordVer = document.getElementById('contrase-registrar-ver').value;
-
-    if (password !== passwordVer) {
-      alert('Las contraseñas no coinciden');
-      document.getElementById('contrase-registrar').setAttribute('style', 'border: solid 2px red');
-      document.getElementById('contrase-registrar-ver').setAttribute('style', 'border: solid 2px red');
-      return;
-    }
-    if (nickname === '' || email === '' || password === '') {
-      alert('Por favor, complete todos los campos');
-      
-      return;
-    }
-    const existe = usuarios.find(u => u.email === email);
-
-    if (existe) {
-      alert('El usuario ya existe');
-      return;
-    }
-
-    usuarios.push({ nickname, email, password });
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    alert('Usuario registrado correctamente');
-    document.getElementById('nick-registrar').value = '';
-    document.getElementById('email-registrar').value = '';
-    document.getElementById('contrase-registrar').value = '';
-    document.getElementById('contrase-registrar-ver').value = '';
-    document.getElementById('contrase-registrar').setAttribute('style', 'border: solid 2px green');
-    document.getElementById('contrase-registrar-ver').setAttribute('style', 'border: solid 2px green');
-    document.getElementById('nick-registrar').setAttribute('style', 'border: solid 2px green');;
-    document.getElementById('email-registrar').setAttribute('style', 'border: solid 2px green');;
-    return;
-  }
+  
 
   const cerrarCuenta = () => {
     localStorage.removeItem('usuarioActivo');
@@ -149,70 +89,50 @@ function App() {
     if (usuarioActivo) {
       document.getElementById('carritoBTN').removeAttribute('hidden');
       document.getElementById('btn-cerrar').removeAttribute('hidden');
-      document.getElementsByClassName('cuenta')[0].style.display = 'none';
-      document.getElementById('bienvenida').innerText = `Bienvenido, ${usuarioActivo.nickname}`;
+      document.getElementById('bienvenida').innerText = `${usuarioActivo.nickname}`;
+      document.getElementById('iniciar-s').setAttribute('hidden', 'true');
+      
     }
   }, []);
 
   return (
+    
     <Router>
       <div>
         <header id='barra-sup'>
+          <nav className='navbar justify-content-center m-0 p-0'>
+            <span id='logo'>Yusmeing</span>
+            <Link to="/"><span className='menu'>Inicio</span></Link>
+            <Link to="/Contacto"><span className='menu'>Contacto</span></Link>
+            <Link to="/Blog"><span className='menu'>Blog</span></Link>
+            <Link to="/Nosotros"><span className='menu'>Nosotros</span></Link>
+            <Link to="/Carrito"><span className='menu' id='carritoBTN' hidden>Carrito</span></Link>
+            <span className='texto-custom-dorado' style={{cursor:"default"}}>|</span>
+            <Link to="/Login"><span className='menu' id="iniciar-s">Iniciar sesión</span></Link>
+            <span className='texto-custom-dorado' id='bienvenida'></span>
+            <button
+              id='btn-cerrar'
+              type='button'
+              onClick={cerrarCuenta}
+              style={{
+                width: '100px',
+                height: '40px',
+                border: 'solid 2px gold',
+                margin: '10px',
+                color: 'white',
+                backgroundColor: 'black',
+                cursor: 'pointer'
+              }}
+              hidden
+            >
+              Cerrar sesión
+            </button>
+            
+          </nav>
           
-          <span id='logo'>Yusmeing</span>
-          <Link to="/"><span className='menu'>Inicio</span></Link>
-          <Link to="/Contacto"><span className='menu'>Contacto</span></Link>
-          <Link to="/Blog"><span className='menu'>Blog</span></Link>
-          <Link to="/Nosotros"><span className='menu'>Nosotros</span></Link>
-          <Link to="/Carrito"><span className='menu' id='carritoBTN' hidden>Carrito</span></Link>
-          <button
-            id='btn-cerrar'
-            type='button'
-            onClick={cerrarCuenta}
-            style={{
-              width: '100px',
-              height: '40px',
-              border: 'solid 2px gold',
-              margin: '10px',
-              color: 'white',
-              backgroundColor: 'black',
-              cursor: 'pointer'
-            }}
-            hidden
-          >
-            Cerrar sesión
-          </button>
         </header>
 
-        <h1 id='bienvenida'>Bienvenido a Yusmeing</h1>
-
-        <div className='cuenta'>
-          <div className='ini'>
-            <div id='tex'>
-              <h1>Iniciar sesión</h1>
-            </div>
-            <h3 className='texto-cuenta'>Usuario</h3>
-            <input type='text' id='nick-iniciar' placeholder='usuario' required />
-            <br />
-            <h3 className='texto-cuenta'>Contraseña</h3>
-            <input type='password' id='contrase-iniciar' placeholder='* * * * *' required />
-            <br />
-            <button type="submit" onClick={verificarUsuario}>Ingresar</button>
-          </div>
-
-          <div className='ini'>
-            <h1>Registrarse</h1>
-            <input type="text" id="nick-registrar" placeholder="Nickname" />
-            <br />
-            <input type="email" id="email-registrar" placeholder="Email" />
-            <br />
-            <input type="password" id="contrase-registrar" placeholder="Contraseña" />
-            <br />
-            <input type="password" id="contrase-registrar-ver" placeholder="Repetir Contraseña" />
-            <br />
-            <button type="submit" onClick={registrarUsuario}>Registrar</button>
-          </div>
-        </div>
+        
 
         <Routes>
           <Route path="/" element={<Inicio productos={productos} agregarAlcarrito={agregarAlcarrito} />} />
@@ -220,7 +140,7 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Nosotros" element={<Nosotros />} />
           <Route path="/Carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
-
+          <Route path='/Login' element={<Login/>} />
         </Routes>
 
         <footer>2025 sitio web desarrollado por brx2b (Brian Aravena). Todos los derechos reservados.</footer>
