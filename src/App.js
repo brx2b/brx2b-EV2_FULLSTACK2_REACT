@@ -9,12 +9,11 @@ import Nosotros from './pages/Nosotros';
 import Blog from './pages/Blog';
 import Carrito from './pages/Carrito';
 import Login from './pages/Login';
-
 function Inicio({ productos, agregarAlcarrito }) {
   return (
-    <div id='media-pag' className='tarjeta'>
+    <div id='media-pag' className='tarjeta card-body '>
       {productos.map(producto => (
-        <div className='tarjetas' key={producto.id}>
+        <div className='tarjetas m-0 p-0' key={producto.id}>
           <img src={producto.imagen} alt={producto.nombre} style={{ width: '40vh' }} />
           <h3>{producto.nombre}</h3>
           <p>${producto.precio}</p>
@@ -100,7 +99,9 @@ function App() {
     <Router>
       <div>
         <header id='barra-sup'>
-          <nav className='navbar justify-content-center m-0 p-0'>
+             
+          <nav className='navbar justify-content-center m-0 p-0 position-relative'>
+            
             <span id='logo'>Yusmeing</span>
             <Link to="/"><span className='menu'>Inicio</span></Link>
             <Link to="/Contacto"><span className='menu'>Contacto</span></Link>
@@ -142,7 +143,7 @@ function App() {
           <Route path="/Carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
           <Route path='/Login' element={<Login/>} />
         </Routes>
-
+        
         <footer>2025 sitio web desarrollado por brx2b (Brian Aravena). Todos los derechos reservados.</footer>
       </div>
     </Router>
