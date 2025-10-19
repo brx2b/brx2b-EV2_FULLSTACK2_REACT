@@ -23,6 +23,7 @@ export default function Nosotros() {
           borderBottom: 'solid 3px gold',
           boxShadow: '0px 20px 10px rgba(0, 0, 0, 0.5)',
           marginBottom: '2rem',
+          borderTop: 'solid 2px white',
         }}
       >
         <h1 className="dec-text" style={{ color: 'gold' }}>

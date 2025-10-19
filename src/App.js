@@ -13,12 +13,12 @@ function Inicio({ productos, agregarAlcarrito }) {
   return (
     <div id='media-pag' className='tarjeta card-body '>
       {productos.map(producto => (
-        <div className='tarjetas m-0 p-0' key={producto.id}>
+        <div className='tarjetas p-3 m-0 card-body fs-4' key={producto.id}>
           <img src={producto.imagen} alt={producto.nombre} style={{ width: '40vh' }} />
           <h3>{producto.nombre}</h3>
           <p>${producto.precio}</p>
           <p>{producto.desc}</p>
-          <button
+          <button className='btn'
             style={{
               cursor: 'pointer',
               color: 'white',
@@ -49,7 +49,7 @@ function App() {
     { id: 6, nombre: 'Collar blanco', precio: 699000, imagen: 'imgs/output (1).jpg', desc: 'Collar de diamante blanco', cantidad: 0 },
     { id: 7, nombre: 'Pendientes blancos', precio: 720000, imagen: 'imgs/output (2).jpg', desc: 'Pendientes de diamante blanco', cantidad: 0 },
     { id: 8, nombre: 'Grills de gemas', precio: 110000, imagen: 'imgs/output (3).jpg', desc: 'Grills de oro y gemas', cantidad: 0 },
-    { id: 9, nombre: 'Grills de diamante', precio: 149000, imagen: 'imgs/output (4).jpg', desc: 'Grills de diamante blanco con oro', cantidad: 0 }
+    { id: 9, nombre: 'Grills de diamante', precio: 149000, imagen: 'imgs/output (4).jpg', desc: 'Grills de diamante blanco', cantidad: 0 }
   ];
 
   const [carrito, setCarrito] = useState([]);

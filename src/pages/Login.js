@@ -1,7 +1,10 @@
 import React from "react";
 import App from "../App";
+import "../Login.css";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { backgroundBlurriness } from "three/tsl";
+
 export default function Login(){
     const usuarios = [{ nickname: 'admin', email: '', password: 'admin' }];
     const navigate = useNavigate();
@@ -72,7 +75,7 @@ export default function Login(){
     return(
         <>
             
-        <div className='cuenta'>
+        <div className='cuenta mt-1 mb-1'>
           <div className='ini'>
             <div id='tex'>
               <h1>Iniciar sesión</h1>
