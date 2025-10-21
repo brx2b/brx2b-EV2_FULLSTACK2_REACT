@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-
+import "../coloresCustom.css";
 function Blog() {
   return (
-    <div>
+    
+    <div className="fondo-blog" style={{backgroundColor:' rgba(0, 0, 0, 0.8)',borderTop:'solid 2px white', borderBottom:'solid 2px white'}}>
       {/* Contenido principal */}
       <main id="contenedor-blog" style={{ padding: "2rem" }}>
         <h1 style={{ color: "gold", textAlign: "center" }}>Blog</h1>
         <br />
 
-        <div className="entrada-blog" style={entradaStyle}>
+        <div className="entrada-blog" style={entradaStyle}> 
           <h2>El primer collar hecho 99% de materia negra</h2>
           <p>
             Dicen que la moda es un agujero negro para la billetera… ahora puedes
@@ -69,9 +70,9 @@ function Blog() {
   );
 }
 
-// 💎 Estilo reutilizable
-const entradaStyle = {
-  backgroundColor: "rgba(255, 215, 0, 0.2)",
+// estilo de cada bloque de entrada del blog
+const entradaStyle = {  
+  backgroundColor: "rgba(0, 0, 0, 0.6)",
   border: "2px solid gold",
   padding: "20px",
   margin: "20px auto",

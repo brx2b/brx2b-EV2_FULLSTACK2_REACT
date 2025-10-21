@@ -20,10 +20,10 @@ export default function Nosotros() {
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           padding: '5%',
-          borderBottom: 'solid 3px gold',
           boxShadow: '0px 20px 10px rgba(0, 0, 0, 0.5)',
           marginBottom: '2rem',
           borderTop: 'solid 2px white',
+          borderBottom: 'solid 2px white',
         }}
       >
         <h1 className="dec-text" style={{ color: 'gold' }}>
@@ -46,13 +46,12 @@ export default function Nosotros() {
           expectativas de cada cliente.
         </p>
       </div>
-
       <div
         id="blok"
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           padding: '5%',
-          borderBottom: 'solid 3px gold',
+          borderBottom: 'solid 2px white',
           boxShadow: '0px 20px 10px rgba(0, 0, 0, 0.5)',
         }}
       >

@@ -18,6 +18,7 @@ export default function Login(){
       document.getElementById('contrase-iniciar').setAttribute('style', 'border: solid 2px red');
       return;
     }
+    //al encontrar un usuario que coincida con el nickname y la contraseña ingresados es TRUE
     const usuarioActivo = usuarios.find(u => u.nickname === nickname && u.password === password);
 
     if (usuarioActivo) {
@@ -28,7 +29,7 @@ export default function Login(){
         document.getElementById('iniciar-s').setAttribute('hidden', 'true');
       alert(`Bienvenido, ${usuarioActivo.nickname}`);
       
-      navigate("/");
+      navigate("/"); // Redirige a la página principal
       
     } else {
       alert('Usuario o contraseña incorrectos');
@@ -52,8 +53,10 @@ export default function Login(){
       
       return;
     }
+    //verifica si ya existe un usuario con el mismo email
     const existe = usuarios.find(u => u.email === email);
 
+    //si existe es TRUE
     if (existe) {
       alert('El usuario ya existe');
       return;

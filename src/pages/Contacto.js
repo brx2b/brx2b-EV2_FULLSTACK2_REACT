@@ -1,13 +1,13 @@
 import React from 'react';
 import '../App.css';
 import '../contacto.css';
-
+import "../coloresCustom.css";
 export default function Contacto() {
   return (
     <div
       className="contenedorCon"
     >
-      <h1 style={{ color: 'gold' }}>Contacto</h1>
+      <h1 style={{ color: 'texto-custom-dorado' }}>Contacto</h1>
       <br />
       <h3>Teléfono: +56 9 1234567</h3>
       <h3>Email: bria.aravena@duocuc.cl</h3>

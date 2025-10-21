@@ -41,9 +41,13 @@ function Carrito({ carrito, setCarrito }) {
     (sum, item) => sum + item.precio * item.cantidad,
     0
   );
+  function compraCompleta(){
+    alert("¡Compra realizada!, gracias por su compra.");
+    setCarrito([]);
+  }
 
   return (
-    <div style={{ padding: "2rem", color: "white", background: "black", minHeight: "100vh" }}>
+    <div style={{ padding: "5vh", color: "white", background: "rgba(0, 0, 0, 0.7)", minHeight: "100vh",borderTop:"solid 2px white",borderBottom:"solid 2px white" }}>
       <h1 style={{ color: "gold" }}>Carrito</h1>
       {carrito.length === 0 ? (
         <p>No hay productos en el carrito.</p> // si no hay carritos mostrar mensaje
@@ -110,7 +114,7 @@ function Carrito({ carrito, setCarrito }) {
           ))}
           <h2 style={{ color: "gold" }}>Total: ${total.toLocaleString()}</h2>
           <button
-            onClick={() => alert("¡Compra realizada!, gracias por su compra.")}
+            onClick= {compraCompleta} //Al hacer click en el boton se ejecuta la funcion compraCompleta
             style={{
               border: "2px solid gold",
               background: "black",

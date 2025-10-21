@@ -82,7 +82,9 @@ footer{
     font-family: "DM Serif Text", serif;
     row-gap: 20px;
     border-top: solid 2px white;
+    border-bottom: solid 2px white;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 @media (max-width: 1440px) {
   #media-pag {

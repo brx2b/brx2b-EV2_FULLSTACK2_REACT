@@ -10,6 +10,12 @@ body{
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.7);
     border: solid 2px rgb(255, 255, 255);
 }
-footer{
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid white;
     margin-top: 19.4vh;
 }

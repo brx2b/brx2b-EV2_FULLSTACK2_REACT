@@ -12,6 +12,7 @@ import Login from './pages/Login';
 function Inicio({ productos, agregarAlcarrito }) {
   return (
     <div id='media-pag' className='tarjeta card-body '>
+      {/* Recorre los items que se mostraran */}
       {productos.map(producto => (
         <div className='tarjetas p-3 m-0 card-body fs-4' key={producto.id}>
           <img src={producto.imagen} alt={producto.nombre} style={{ width: '40vh' }} />
@@ -39,7 +40,7 @@ function Inicio({ productos, agregarAlcarrito }) {
 
 function App() {
   
-  
+  // Productos disponibles en la tienda
   const productos = [
     { id: 1, nombre: 'Collar con jade', precio: 199000, imagen: 'imgs/12f6e627-4fcb-47cd-a9f2-be5cf3011344.jpeg', desc: 'Collar de oro 18k', cantidad: 0 },
     { id: 2, nombre: 'Miel de dorado', precio: 690990, imagen: 'imgs/botella_miel_de_oro.jpg', desc: 'Botella de miel de oro 24k', cantidad: 0 },
@@ -51,7 +52,7 @@ function App() {
     { id: 8, nombre: 'Grills de gemas', precio: 110000, imagen: 'imgs/output (3).jpg', desc: 'Grills de oro y gemas', cantidad: 0 },
     { id: 9, nombre: 'Grills de diamante', precio: 149000, imagen: 'imgs/output (4).jpg', desc: 'Grills de diamante blanco', cantidad: 0 }
   ];
-
+  // Estado del carrito
   const [carrito, setCarrito] = useState([]);
 
   
@@ -75,7 +76,7 @@ function App() {
   };
 
   
-
+  
   const cerrarCuenta = () => {
     localStorage.removeItem('usuarioActivo');
     document.getElementById('bienvenida').innerText = 'Bienvenido a Yusmeing';
@@ -90,13 +91,13 @@ function App() {
       document.getElementById('btn-cerrar').removeAttribute('hidden');
       document.getElementById('bienvenida').innerText = `${usuarioActivo.nickname}`;
       document.getElementById('iniciar-s').setAttribute('hidden', 'true');
-      
+      // Si hay un usuario activo, mostrar su nombre y los botones correspondientes
     }
   }, []);
 
   return (
-    
-    <Router>
+    // componente Router para manejar las rutas de la aplicación
+    <Router> 
       <div>
         <header id='barra-sup'>
              
@@ -134,7 +135,7 @@ function App() {
         </header>
 
         
-
+               
         <Routes>
           <Route path="/" element={<Inicio productos={productos} agregarAlcarrito={agregarAlcarrito} />} />
           <Route path="/Contacto" element={<Contacto />} />
