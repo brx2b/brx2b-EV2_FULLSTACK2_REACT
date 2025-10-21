@@ -28,8 +28,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 a{
-    
-    color: white;
+  color: white;
    text-decoration: none; 
    transition: 320ms;
 }
