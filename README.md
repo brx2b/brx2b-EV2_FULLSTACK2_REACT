@@ -6,6 +6,8 @@ Brian Aravena Quezada
 
 ---
 
+VERCEL REACT: https://brx2b-ev-2-fullstack-2-react-jvvc1zbcl-brians-projects-519e32ef.vercel.app/
+
 ## Yusmeing
 
 La tienda de lujo más grande del mundo ya cuenta con su propia página web con ¡compras y envíos de forma internaciona!, 
